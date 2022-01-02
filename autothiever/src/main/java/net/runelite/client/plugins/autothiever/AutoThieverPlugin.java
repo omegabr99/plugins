@@ -45,7 +45,7 @@ public class AutoThieverPlugin extends Plugin {
     @Inject
     private ItemManager itemManager;
 
-    private MenuEntry entry;
+    private LegacyMenuEntry entry;
 
     private Random r = new Random();
 
@@ -236,15 +236,6 @@ public class AutoThieverPlugin extends Plugin {
 
     public int getRandom(int min, int max) {
         return r.nextInt((max - min) + 1) + min;
-    }
-
-    @Subscribe
-    public void onMenuOptionClicked(MenuOptionClicked event) {
-        if (entry != null) {
-            event.setMenuEntry(entry);
-        }
-
-        entry = null;
     }
 
     public WidgetItem getInventoryItem(int... ids) {

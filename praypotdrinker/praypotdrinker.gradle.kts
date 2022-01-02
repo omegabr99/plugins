@@ -1,4 +1,4 @@
-version = "1.0.1"
+version = "1.0.2"
 
 project.extra["PluginName"] = "Prayer Pot Drinker"
 project.extra["PluginDescription"] = "Automatically drink pray potions as needed"

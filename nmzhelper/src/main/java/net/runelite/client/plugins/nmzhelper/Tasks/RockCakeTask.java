@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 import net.runelite.api.Client;
 import net.runelite.api.ItemID;
-import net.runelite.api.MenuEntry;
 import net.runelite.api.MenuAction;
 import net.runelite.api.Skill;
 import net.runelite.api.Varbits;
@@ -88,7 +87,7 @@ public class RockCakeTask extends Task {
         WidgetItem item = items.get(0);
 
         clientThread.invoke(() -> client.invokeMenuAction("Guzzle", "<col=ff9040>Dwarven rock cake", item.getId(), MenuAction.ITEM_THIRD_OPTION.getId(), item.getIndex(), WidgetInfo.INVENTORY.getId()));
-        //entry = new MenuEntry("Guzzle", "<col=ff9040>Dwarven rock cake", item.getId(), MenuAction.ITEM_THIRD_OPTION.getId(), item.getIndex(), WidgetInfo.INVENTORY.getId(), false);
+        //entry = new LegacyMenuEntry("Guzzle", "<col=ff9040>Dwarven rock cake", item.getId(), MenuAction.ITEM_THIRD_OPTION.getId(), item.getIndex(), WidgetInfo.INVENTORY.getId(), false);
         //click();
     }
 }

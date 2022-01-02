@@ -239,7 +239,7 @@ public class LavaCrafterPlugin extends Plugin
 			return;
 		}
 
-		MenuEntry entry = getEntry(localPlayer);
+		LegacyMenuEntry entry = getEntry(localPlayer);
 
 		if (entry != null)
 		{
@@ -440,7 +440,7 @@ public class LavaCrafterPlugin extends Plugin
 		return next;
 	}
 
-	public MenuEntry getEntry(Player localPlayer)
+	public LegacyMenuEntry getEntry(Player localPlayer)
 	{
 		switch (state.type)
 		{
@@ -450,7 +450,7 @@ public class LavaCrafterPlugin extends Plugin
 				if (object == null)
 					return null;
 
-				return new MenuEntry(state.option, state.target, state.identifier, state.opcode, object.getSceneMinLocation().getX(), object.getSceneMinLocation().getY(), false);
+				return new LegacyMenuEntry(state.option, state.target, state.identifier, state.opcode, object.getSceneMinLocation().getX(), object.getSceneMinLocation().getY(), false);
 
 			case BANK_ITEM:
 				WidgetItem bankItem = null;
@@ -486,7 +486,7 @@ public class LavaCrafterPlugin extends Plugin
 				if (bankItem == null)
 					return null;
 
-				return new MenuEntry(state.option, state.target, state.identifier, state.opcode, bankItem.getWidget().getIndex(), state.param1, false);
+				return new LegacyMenuEntry(state.option, state.target, state.identifier, state.opcode, bankItem.getWidget().getIndex(), state.param1, false);
 
 			case INVENTORY_ITEM:
 
@@ -543,10 +543,10 @@ public class LavaCrafterPlugin extends Plugin
 				if (inventoryItem == null)
 					return null;
 
-				return new MenuEntry(state.option, state.target, state.identifier, state.opcode, inventoryItem.getIndex(), state.param1, false);
+				return new LegacyMenuEntry(state.option, state.target, state.identifier, state.opcode, inventoryItem.getIndex(), state.param1, false);
 
 			default:
-				return new MenuEntry(state.option, state.target, state.identifier, state.opcode, state.param0, state.param1, false);
+				return new LegacyMenuEntry(state.option, state.target, state.identifier, state.opcode, state.param0, state.param1, false);
 		}
 	}
 

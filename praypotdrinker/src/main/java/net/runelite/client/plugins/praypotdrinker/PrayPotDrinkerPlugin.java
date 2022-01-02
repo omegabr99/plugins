@@ -123,9 +123,9 @@ public class PrayPotDrinkerPlugin extends Plugin
 		}
 	}
 
-	private MenuEntry getConsumableEntry(String itemName, int itemId, int itemIndex)
+	private LegacyMenuEntry getConsumableEntry(String itemName, int itemId, int itemIndex)
 	{
-		return new MenuEntry("Drink", "<col=ff9040>" + itemName, itemId, MenuAction.ITEM_FIRST_OPTION.getId(), itemIndex, WidgetInfo.INVENTORY.getId(), false);
+		return new LegacyMenuEntry("Drink", "<col=ff9040>" + itemName, itemId, MenuAction.ITEM_FIRST_OPTION.getId(), itemIndex, WidgetInfo.INVENTORY.getId(), false);
 	}
 
 	public WidgetItem getRestoreItem()

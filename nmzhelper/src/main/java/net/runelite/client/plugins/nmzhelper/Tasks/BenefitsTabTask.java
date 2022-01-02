@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 import net.runelite.api.Client;
 import net.runelite.api.ItemID;
-import net.runelite.api.MenuEntry;
 import net.runelite.api.MenuAction;
 import net.runelite.api.events.GameTick;
 import net.runelite.api.widgets.Widget;
@@ -115,7 +114,7 @@ public class BenefitsTabTask extends Task {
         }
 
         clientThread.invoke(() -> client.invokeMenuAction("Benefits", "", 1, MenuAction.CC_OP.getId(), 4, benefitTab.getId()));
-        //entry = new MenuEntry("Benefits", "", 1, MenuAction.CC_OP.getId(), 4, benefitTab.getId(), false);
+        //entry = new LegacyMenuEntry("Benefits", "", 1, MenuAction.CC_OP.getId(), 4, benefitTab.getId(), false);
         //click();
     }
 

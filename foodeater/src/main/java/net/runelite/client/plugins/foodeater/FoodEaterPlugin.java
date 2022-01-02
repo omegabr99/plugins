@@ -72,7 +72,7 @@ public class FoodEaterPlugin extends Plugin {
                 final String name = this.itemManager.getItemComposition(item.getId()).getName();
 
                 if (name.equalsIgnoreCase(this.config.foodToEat())) {
-                    MenuEntry entry = getConsumableEntry(name, item.getId(), item.getIndex());
+                    LegacyMenuEntry entry = getConsumableEntry(name, item.getId(), item.getIndex());
                     clientThread.invoke(() ->
                             client.invokeMenuAction(
                                     entry.getOption(),
@@ -91,7 +91,7 @@ public class FoodEaterPlugin extends Plugin {
         }
     }
 
-    private MenuEntry getConsumableEntry(String itemName, int itemId, int itemIndex) {
-        return new MenuEntry("Eat", "<col=ff9040>" + itemName, itemId, MenuAction.ITEM_FIRST_OPTION.getId(), itemIndex, WidgetInfo.INVENTORY.getId(), false);
+    private LegacyMenuEntry getConsumableEntry(String itemName, int itemId, int itemIndex) {
+        return new LegacyMenuEntry("Eat", "<col=ff9040>" + itemName, itemId, MenuAction.ITEM_FIRST_OPTION.getId(), itemIndex, WidgetInfo.INVENTORY.getId(), false);
     }
 }

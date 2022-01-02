@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import net.runelite.api.Client;
 import net.runelite.api.GameObject;
 import net.runelite.api.ItemID;
-import net.runelite.api.MenuEntry;
 import net.runelite.api.MenuAction;
 import net.runelite.api.ObjectID;
 import net.runelite.api.QueryResults;

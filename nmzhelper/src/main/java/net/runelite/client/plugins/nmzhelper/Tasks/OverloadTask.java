@@ -10,10 +10,7 @@ import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.api.widgets.WidgetItem;
 import net.runelite.client.callback.ClientThread;
-import net.runelite.client.plugins.nmzhelper.MiscUtils;
-import net.runelite.client.plugins.nmzhelper.NMZHelperConfig;
-import net.runelite.client.plugins.nmzhelper.NMZHelperPlugin;
-import net.runelite.client.plugins.nmzhelper.Task;
+import net.runelite.client.plugins.nmzhelper.*;
 
 public class OverloadTask extends Task {
     public OverloadTask(NMZHelperPlugin plugin, Client client, ClientThread clientThread, NMZHelperConfig config) {
@@ -78,7 +75,7 @@ public class OverloadTask extends Task {
         if (item == null)
             return;
 
-        MenuEntry entry = MiscUtils.getConsumableEntry("", item.getId(), item.getIndex());
+        LegacyMenuEntry entry = MiscUtils.getConsumableEntry("", item.getId(), item.getIndex());
         clientThread.invoke(() -> client.invokeMenuAction(entry.getOption(), entry.getTarget(), entry.getIdentifier(), entry.getOpcode(), entry.getParam0(), entry.getParam1()));
         //click();
     }

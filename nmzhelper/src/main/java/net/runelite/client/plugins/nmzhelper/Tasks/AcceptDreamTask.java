@@ -30,6 +30,6 @@ public class AcceptDreamTask extends Task {
     @Override
     public void onGameTick(GameTick event) {
         clientThread.invoke(() -> client.invokeMenuAction("Continue", "", 0, MenuAction.WIDGET_TYPE_6.getId(), -1, 8454150));
-        //entry = new MenuEntry("Continue", "", 0, MenuAction.WIDGET_TYPE_6.getId(), -1, 8454150, false);
+        //entry = new LegacyMenuEntry("Continue", "", 0, MenuAction.WIDGET_TYPE_6.getId(), -1, 8454150, false);
     }
 }

@@ -2,7 +2,6 @@ package net.runelite.client.plugins.nmzhelper;
 
 import net.runelite.api.Client;
 import net.runelite.api.MenuAction;
-import net.runelite.api.MenuEntry;
 import net.runelite.api.widgets.WidgetInfo;
 
 import java.util.Arrays;
@@ -19,8 +18,8 @@ public class MiscUtils {
         return client.getLocalPlayer().getWorldLocation().getPlane() > 0 && Arrays.equals(client.getMapRegions(), NMZ_MAP_REGION);
     }
 
-    public static MenuEntry getConsumableEntry(String itemName, int itemId, int itemIndex) {
-        return new MenuEntry("Drink", "<col=ff9040>" + itemName, itemId, MenuAction.ITEM_FIRST_OPTION.getId(), itemIndex, WidgetInfo.INVENTORY.getId(), false);
+    public static LegacyMenuEntry getConsumableEntry(String itemName, int itemId, int itemIndex) {
+        return new LegacyMenuEntry("Drink", "<col=ff9040>" + itemName, itemId, MenuAction.ITEM_FIRST_OPTION.getId(), itemIndex, WidgetInfo.INVENTORY.getId(), false);
     }
 
     public static DreamType getDreamType(Client client) {

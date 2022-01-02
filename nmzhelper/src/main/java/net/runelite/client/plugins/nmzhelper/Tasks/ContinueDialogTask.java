@@ -1,11 +1,9 @@
 package net.runelite.client.plugins.nmzhelper.Tasks;
 
 import net.runelite.api.Client;
-import net.runelite.api.MenuEntry;
 import net.runelite.api.MenuAction;
 import net.runelite.api.events.GameTick;
 import net.runelite.api.widgets.Widget;
-import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.plugins.nmzhelper.MiscUtils;
 import net.runelite.client.plugins.nmzhelper.NMZHelperConfig;

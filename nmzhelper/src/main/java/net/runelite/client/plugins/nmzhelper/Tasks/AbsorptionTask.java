@@ -7,17 +7,13 @@ import java.util.stream.Collectors;
 
 import net.runelite.api.Client;
 import net.runelite.api.ItemID;
-import net.runelite.api.MenuEntry;
 import net.runelite.api.Varbits;
 import net.runelite.api.events.GameTick;
 import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.api.widgets.WidgetItem;
 import net.runelite.client.callback.ClientThread;
-import net.runelite.client.plugins.nmzhelper.MiscUtils;
-import net.runelite.client.plugins.nmzhelper.NMZHelperConfig;
-import net.runelite.client.plugins.nmzhelper.NMZHelperPlugin;
-import net.runelite.client.plugins.nmzhelper.Task;
+import net.runelite.client.plugins.nmzhelper.*;
 
 public class AbsorptionTask extends Task {
     private final Random r = new Random();
@@ -83,7 +79,7 @@ public class AbsorptionTask extends Task {
         if (item == null)
             return;
 
-        MenuEntry entry = MiscUtils.getConsumableEntry("", item.getId(), item.getIndex());
+        LegacyMenuEntry entry = MiscUtils.getConsumableEntry("", item.getId(), item.getIndex());
         clientThread.invoke(() -> client.invokeMenuAction(entry.getOption(), entry.getTarget(), entry.getIdentifier(), entry.getOpcode(), entry.getParam0(), entry.getParam1()));
 
         nextAbsorptionValue = r.nextInt(config.absorptionThresholdMax() - config.absorptionThresholdMin()) + config.absorptionThresholdMin();

@@ -3,7 +3,6 @@ package net.runelite.client.plugins.nmzhelper.Tasks;
 import java.util.Random;
 
 import net.runelite.api.Client;
-import net.runelite.api.MenuEntry;
 import net.runelite.api.MenuAction;
 import net.runelite.api.VarPlayer;
 import net.runelite.api.events.GameTick;
@@ -61,7 +60,7 @@ public class SpecialAttackTask extends Task {
 
     @Override
     public void onGameTick(GameTick event) {
-        //entry = new MenuEntry("Use <col=00ff00>Special Attack</col>", "", 1, MenuAction.CC_OP.getId(), -1, 38862884, false);
+        //entry = new LegacyMenuEntry("Use <col=00ff00>Special Attack</col>", "", 1, MenuAction.CC_OP.getId(), -1, 38862884, false);
         clientThread.invoke(() -> client.invokeMenuAction("Use <col=00ff00>Special Attack</col>", "", 1, MenuAction.CC_OP.getId(), -1, 38862884));
 
         nextSpecialValue = r.nextInt(config.specialAttackMax() - config.specialAttackMin()) + config.specialAttackMin();

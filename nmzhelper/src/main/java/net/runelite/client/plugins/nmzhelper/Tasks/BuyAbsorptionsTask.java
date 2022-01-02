@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 import net.runelite.api.Client;
 import net.runelite.api.ItemID;
-import net.runelite.api.MenuEntry;
 import net.runelite.api.MenuAction;
 import net.runelite.api.VarPlayer;
 import net.runelite.api.events.GameTick;
@@ -107,7 +106,7 @@ public class BuyAbsorptionsTask extends Task {
         }
 
         clientThread.invoke(() -> client.invokeMenuAction("Buy-50", "<col=ff9040>Absorption (1)", 4, MenuAction.CC_OP.getId(), 9, absorptionWidget.getId()));
-        //entry = new MenuEntry("Buy-50", "<col=ff9040>Absorption (1)", 4, MenuAction.CC_OP.getId(), 9, absorptionWidget.getId(), false);
+        //entry = new LegacyMenuEntry("Buy-50", "<col=ff9040>Absorption (1)", 4, MenuAction.CC_OP.getId(), 9, absorptionWidget.getId(), false);
         //click();
     }
 

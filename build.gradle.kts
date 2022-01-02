@@ -21,14 +21,31 @@ subprojects {
     project.extra["PluginLicense"] = "3-Clause BSD License"
 
     repositories {
-        maven {
+        jcenter {
+            content {
+                excludeGroupByRegex("com\\.openosrs.*")
+            }
+        }
+
+        exclusiveContent {
+            forRepository {
+                mavenLocal()
+            }
+            filter {
+                includeGroupByRegex("com\\.openosrs.*")
+                includeGroupByRegex("com\\.owain.*")
+            }
+        }
+        
+
+        /*maven {
             url = uri("https://dl.bintray.com")
         }
         jcenter()
         maven(url = "https://repo.runelite.net")
         //maven(url = "https://repo.openosrs.com/repository/maven")
         mavenLocal()
-        mavenCentral()
+        mavenCentral()*/
         /*exclusiveContent {
             /*forRepository {
                 maven {
@@ -100,4 +117,7 @@ subprojects {
             fileMode = 420
         }
     }
+}
+dependencies {
+    implementation("org.projectlombok:lombok:1.18.20")
 }

@@ -64,7 +64,7 @@ public class WithdrawAbsorptionTask extends Task {
         client.setVar(VarClientInt.INPUT_TYPE, 7);
         client.setVar(VarClientStr.INPUT_TEXT, String.valueOf(config.absorptionDoses() - getDoseCount()));
         client.runScript(681);
-        client.runScript(ScriptID.MESSAGE_LAYER_CLOSE, 0, 1);
+        client.runScript(ScriptID.MESSAGE_LAYER_CLOSE, 0, 1, 0);
     }
 
     public int getDoseCount() {

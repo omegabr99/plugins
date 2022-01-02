@@ -1,5 +1,5 @@
 object ProjectVersions {
-    const val rlVersion = "4.9.12"
+    const val rlVersion = "4.17.1"
     const val apiVersion = "^1.0.0"
 }
 
@@ -13,7 +13,7 @@ object Libraries {
         const val rxjava = "3.0.10"
     }
 
-    const val apacheCommonsText = "org.apache.commons:commons-text:${Versions.apacheCommonsText}"
+    //const val apacheCommonsText = "org.apache.commons:commons-text:${Versions.apacheCommonsText}"
     const val guice = "com.google.inject:guice:${Versions.guice}:no_aop"
     const val lombok = "org.projectlombok:lombok:${Versions.lombok}"
     const val okhttp3 = "com.squareup.okhttp3:okhttp:${Versions.okhttp3}"

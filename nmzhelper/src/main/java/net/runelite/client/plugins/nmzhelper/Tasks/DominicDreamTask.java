@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 import net.runelite.api.Client;
 import net.runelite.api.ItemID;
-import net.runelite.api.MenuEntry;
 import net.runelite.api.MenuAction;
 import net.runelite.api.NPC;
 import net.runelite.api.NpcID;
@@ -92,7 +91,7 @@ public class DominicDreamTask extends Task {
             return;
 
         clientThread.invoke(() -> client.invokeMenuAction("Dream", "<col=ffff00>Dominic Onion", dominicOnion.getIndex(), MenuAction.NPC_THIRD_OPTION.getId(), 0, 0));
-        //entry = new MenuEntry("Dream", "<col=ffff00>Dominic Onion", dominicOnion.getIndex(), MenuAction.NPC_THIRD_OPTION.getId(), 0, 0, false);
+        //entry = new LegacyMenuEntry("Dream", "<col=ffff00>Dominic Onion", dominicOnion.getIndex(), MenuAction.NPC_THIRD_OPTION.getId(), 0, 0, false);
         //click();
     }
 

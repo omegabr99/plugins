@@ -28,7 +28,7 @@ public interface ScriptCommand {
                 return;
             }
 
-            //plugin.entryList.add(new MenuEntry("Activate", prayer_widget.getName(), 1, MenuAction.CC_OP.getId(), -1, prayer_widget.getId(), false));
+            //plugin.entryList.add(new LegacyMenuEntry("Activate", prayer_widget.getName(), 1, MenuAction.CC_OP.getId(), -1, prayer_widget.getId(), false));
             plugin.clientThread.invoke(() -> client.invokeMenuAction("Activate", prayer_widget.getName(), 1, MenuAction.CC_OP.getId(), -1, prayer_widget.getId()));
             //click(client);
         } catch (Exception e) {
@@ -46,7 +46,7 @@ public interface ScriptCommand {
                 return;
             }
 
-            //plugin.entryList.add(new MenuEntry(spell_widget.getTargetVerb(), spell_widget.getName(), 1, MenuAction.CC_OP.getId(), spell_widget.getItemId(), spell_widget.getId(), false));
+            //plugin.entryList.add(new LegacyMenuEntry(spell_widget.getTargetVerb(), spell_widget.getName(), 1, MenuAction.CC_OP.getId(), spell_widget.getItemId(), spell_widget.getId(), false));
             plugin.clientThread.invoke(() -> client.invokeMenuAction(spell_widget.getTargetVerb(), spell_widget.getName(), 1, MenuAction.CC_OP.getId(), spell_widget.getItemId(), spell_widget.getId()));
             //click(client);
         } catch (Exception e) {
@@ -64,7 +64,7 @@ public interface ScriptCommand {
                 return;
             }
 
-            //plugin.entryList.add(new MenuEntry(spell_widget.getTargetVerb(), spell_widget.getName(), 0, MenuAction.WIDGET_TYPE_2.getId(), spell_widget.getItemId(), spell_widget.getId(), false));
+            //plugin.entryList.add(new LegacyMenuEntry(spell_widget.getTargetVerb(), spell_widget.getName(), 0, MenuAction.WIDGET_TYPE_2.getId(), spell_widget.getItemId(), spell_widget.getId(), false));
             plugin.clientThread.invoke(() -> client.invokeMenuAction(spell_widget.getTargetVerb(), spell_widget.getName(), 0, MenuAction.WIDGET_TYPE_2.getId(), spell_widget.getItemId(), spell_widget.getId()));
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -278,7 +278,7 @@ class SpecCommand implements ScriptCommand {
                 return;
             }
 
-            //plugin.entryList.add(new MenuEntry("Use <col=00ff00>Special Attack</col>", "", 1, MenuAction.CC_OP.getId(), -1, 38862884, false));
+            //plugin.entryList.add(new LegacyMenuEntry("Use <col=00ff00>Special Attack</col>", "", 1, MenuAction.CC_OP.getId(), -1, 38862884, false));
             plugin.clientThread.invoke(() -> client.invokeMenuAction("Use <col=00ff00>Special Attack</col>", "", 1, MenuAction.CC_OP.getId(), -1, 38862884));
             //click(client);
         } catch (Exception e) {
@@ -309,7 +309,7 @@ class GroupCommand implements ScriptCommand {
 
             for (WidgetItem item : inventory.getWidgetItems()) {
                 if (("Group " + groupNumber).equalsIgnoreCase(getTag(configManager, item.getId()))) {
-                    //plugin.entryList.add(new MenuEntry("Wield", "<col=ff9040>" + item.getId(), item.getId(), MenuAction.ITEM_SECOND_OPTION.getId(), item.getIndex(), WidgetInfo.INVENTORY.getId(), false));
+                    //plugin.entryList.add(new LegacyMenuEntry("Wield", "<col=ff9040>" + item.getId(), item.getId(), MenuAction.ITEM_SECOND_OPTION.getId(), item.getIndex(), WidgetInfo.INVENTORY.getId(), false));
                     plugin.clientThread.invoke(() -> client.invokeMenuAction("Wield", "<col=ff9040>" + item.getId(), item.getId(), MenuAction.ITEM_SECOND_OPTION.getId(), item.getIndex(), WidgetInfo.INVENTORY.getId()));
                 }
             }
@@ -342,7 +342,7 @@ class ItemCommand implements ScriptCommand {
 
             for (WidgetItem item : inventory.getWidgetItems()) {
                 if (itemId == item.getId()) {
-                    //plugin.entryList.add(new MenuEntry("Wield", "<col=ff9040>" + item.getId(), item.getId(), MenuAction.ITEM_SECOND_OPTION.getId(), item.getIndex(), WidgetInfo.INVENTORY.getId(), false));
+                    //plugin.entryList.add(new LegacyMenuEntry("Wield", "<col=ff9040>" + item.getId(), item.getId(), MenuAction.ITEM_SECOND_OPTION.getId(), item.getIndex(), WidgetInfo.INVENTORY.getId(), false));
                     plugin.clientThread.invoke(() -> client.invokeMenuAction("Wield", "<col=ff9040>" + item.getId(), item.getId(), MenuAction.ITEM_SECOND_OPTION.getId(), item.getIndex(), WidgetInfo.INVENTORY.getId()));
                     //click(client);
                     return;
@@ -359,7 +359,7 @@ class ClickEnemyCommand implements ScriptCommand {
     public void execute(Client client, PkToolsConfig config, PkToolsPlugin plugin, ConfigManager configManager) {
         try {
             if (plugin.lastEnemy != null) {
-                //plugin.entryList.add(new MenuEntry("", "", plugin.lastEnemy.getPlayerId(), client.getSpellSelected() ? MenuAction.SPELL_CAST_ON_PLAYER.getId() : MenuAction.PLAYER_SECOND_OPTION.getId(), 0, 0, false));
+                //plugin.entryList.add(new LegacyMenuEntry("", "", plugin.lastEnemy.getPlayerId(), client.getSpellSelected() ? MenuAction.SPELL_CAST_ON_PLAYER.getId() : MenuAction.PLAYER_SECOND_OPTION.getId(), 0, 0, false));
                 plugin.clientThread.invoke(() -> client.invokeMenuAction("", "", plugin.lastEnemy.getPlayerId(), client.getSpellSelected() ? MenuAction.SPELL_CAST_ON_PLAYER.getId() : MenuAction.PLAYER_SECOND_OPTION.getId(), 0, 0));
                 //click(client);
             }
